@@ -188,3 +188,67 @@
     font-style: italic;
     color: rgba(0, 0, 0, 0.54);
   }
+
+
+.welcome-logo{
+    height: 20vw;
+}
+.welcome-container{
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: rgba(0,0,0,0.54);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 5px solid #63d7b0;
+    border-radius: 20px;
+    border-top: 5px solid #63d7b0;
+    border-radius: 20px;
+}
+
+.createGroups-container{
+    flex: 0.7;
+    padding: 20px 10px;
+    background-color: white;
+    align-self: center;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ----------Login--------- */
+
+.login-container{
+    height: 90vh;
+    width: 90vw;
+    background-color: #f4f5f8;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.image-container{
+    flex: 0.3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+}
+.login-box{
+    flex: 0.7;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #63d7b0;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    /* margin-bottom: 10x; */
+}

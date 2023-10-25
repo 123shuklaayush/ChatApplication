@@ -23,9 +23,9 @@ function ChatArea( {props} ) {
             <MessageOthers/>
             <MessageSelf/><MessageOthers/>
             <MessageSelf/><MessageOthers/>
-            <MessageSelf/><MessageOthers/>
-            <MessageSelf/><MessageOthers/>
-            <MessageSelf/><MessageOthers/>
+            <MessageOthers/>
+            <MessageOthers/>
+            <MessageOthers/>
             <MessageSelf/>
         </div>
         <div className="text-input-area">
