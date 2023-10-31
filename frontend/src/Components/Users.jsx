@@ -5,7 +5,7 @@ import logo from '../Images/live-chat_512px.png'
 import { IconButton } from "@mui/material";
 
 
-function Users_Groups() {
+function Users() {
   return (
     <div className="list-container">
      <div className="ug-header">
@@ -41,4 +41,4 @@ function Users_Groups() {
   );
 }
 
-export default Users_Groups;
+export default Users;
