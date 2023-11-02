@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../Features/themeSlice";
 
+
 function Sidebar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,11 +36,11 @@ function Sidebar() {
     },
   ]);
   return (
-    <div className="slidebar-container">
+    <div className="sidebar-container">
       <div className={"sb-header" + (lightTheme? "" : " dark")}>
         <div>
           <IconButton>
-            <AccountCircleIcon className={"icon" + (lightTheme? "" : " dark")} />
+            <AccountCircleIcon className={"other-icons" + (lightTheme? "" : " dark")} />
           </IconButton>
         </div>
 
@@ -49,21 +50,21 @@ function Sidebar() {
               navigate("users");
             }}
           >
-            <PersonAddIcon className={"icon" + (lightTheme? "" : " dark")} />
+            <PersonAddIcon className={"other-icons" + (lightTheme? "" : " dark")} />
           </IconButton>
           <IconButton
             onClick={() => {
               navigate("groups");
             }}
           >
-            <GroupAddIcon className={"icon" + (lightTheme? "" : " dark")} />
+            <GroupAddIcon className={"other-icons" + (lightTheme? "" : " dark")} />
           </IconButton>
           <IconButton
             onClick={() => {
               navigate("create-groups");
             }}
           >
-            <AddCircleIcon className={"icon" + (lightTheme? "" : " dark")} />
+            <AddCircleIcon className={"other-icons" + (lightTheme? "" : " dark")} />
           </IconButton>
 
           <IconButton
@@ -73,11 +74,11 @@ function Sidebar() {
           >
             {lightTheme && (
               <NightlightIcon
-                className={"icon" + (lightTheme ? "" : " dark")}
+                className={"other-icons" + (lightTheme ? "" : " dark")}
               />
             )}
             {!lightTheme && (
-              <LightModeIcon className={"icon" + (lightTheme ? "" : " dark")} />
+              <LightModeIcon className={"other-icons" + (lightTheme ? "" : " dark")} />
             )}
           </IconButton>
 

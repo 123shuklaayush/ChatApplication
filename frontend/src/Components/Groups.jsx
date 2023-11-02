@@ -4,10 +4,21 @@ import SearchIcon from "@mui/icons-material/Search";
 import logo from '../Images/live-chat_512px.png'
 import { IconButton } from "@mui/material";
 import { useSelector } from 'react-redux';
+import { AnimatePresence, motion } from "framer-motion"
 function Groups() {
   const lightTheme = useSelector((state) => state.themeKey)
   return (
-    <div className="list-container">
+    <AnimatePresence>
+
+    <motion.div 
+    initial={{opacity:0,scale:0}}
+    animate={{opacity:1,scale:1}}
+    exit={{opacity:0,scale:0}}
+    transition={{
+      ease:"anticipate",
+      duration: "0.3",
+    }}
+     className="list-container">
      <div className={"ug-header" + (lightTheme ? "" : " dark")}>
 
         <img src={logo}
@@ -21,24 +32,35 @@ function Groups() {
         <input type="text" className={"search-box" + (lightTheme ? "" : " dark")}placeholder="Search"/>
      </div>
      <div>
-        <div className={"list-item" + (lightTheme ? "" : " dark")}>
+        <motion.div
+         whileHover={{scale:1.01}}
+         whileTap={{scale:0.98}}
+         className={"list-item" + (lightTheme ? "" : " dark")}>
             <p className="con-icon">T</p>
             <p className={"con-title" + (lightTheme ? "" : " dark")}>Test Groups</p>
-        </div>
-        <div className={"list-item" + (lightTheme ? "" : " dark")}>
-            <p className="con-icon">T</p> 
-            <p className={"con-title" + (lightTheme ? "" : " dark")}>Test Groups</p>
-        </div>
-        <div className={"list-item" + (lightTheme ? "" : " dark")}>
+        </motion.div>
+        <motion.div
+         whileHover={{scale:1.01}}
+         whileTap={{scale:0.98}}
+         className={"list-item" + (lightTheme ? "" : " dark")}>
             <p className="con-icon">T</p>
             <p className={"con-title" + (lightTheme ? "" : " dark")}>Test Groups</p>
-        </div>
-        <div className={"list-item" + (lightTheme ? "" : " dark")}>
+        </motion.div><motion.div
+         whileHover={{scale:1.01}}
+         whileTap={{scale:0.98}}
+         className={"list-item" + (lightTheme ? "" : " dark")}>
             <p className="con-icon">T</p>
             <p className={"con-title" + (lightTheme ? "" : " dark")}>Test Groups</p>
-        </div>
+        </motion.div><motion.div
+         whileHover={{scale:1.01}}
+         whileTap={{scale:0.98}}
+         className={"list-item" + (lightTheme ? "" : " dark")}>
+            <p className="con-icon">T</p>
+            <p className={"con-title" + (lightTheme ? "" : " dark")}>Test Groups</p>
+        </motion.div>
      </div>
-    </div>
+    </motion.div>
+    </AnimatePresence>
   );
 }
 
