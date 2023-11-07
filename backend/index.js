@@ -6,7 +6,7 @@ const app = express()
 
 
 dotenv.config()
-
+app.use(express.json());
 
 const connectDb = async() => {
     try{
@@ -23,7 +23,7 @@ app.get("/", (req,res) => {
     res.send("API is RUNNING");
 });
 
-app.use("user/", userRoutes)
+app.use("/user", userRoutes)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log("Server is Running"));
