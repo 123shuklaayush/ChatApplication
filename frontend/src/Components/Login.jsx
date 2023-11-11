@@ -19,7 +19,7 @@ function Login() {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const loginHandler = async (e) => {
+  const loginHandler = async () => {
     setLoading(true);
     console.log(data);
     try {
@@ -44,8 +44,8 @@ function Login() {
         msg: "Invalid User name or Password",
         key: Math.random(),
       });
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const signUpHandler = async () => {
@@ -108,8 +108,7 @@ function Login() {
               color="secondary"
               name="name"
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   loginHandler();
                 }
               }}
@@ -123,8 +122,7 @@ function Login() {
               color="secondary"
               name="password"
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   loginHandler();
                 }
               }}
@@ -133,9 +131,13 @@ function Login() {
               variant="outlined"
               color="secondary"
               onClick={loginHandler}
-              isLoading
+              disabled={loading}
             >
-              Login
+              {loading ? (
+                <CircularProgress size={24} color="secondary" />
+              ) : (
+                "Login"
+              )}
             </Button>
             <p>
               Don't have an Account ?{" "}
@@ -143,7 +145,8 @@ function Login() {
                 className="hyper"
                 onClick={() => {
                   setShowLogin(false);
-                }} style={{cursor:"pointer"}}
+                }}
+                style={{ cursor: "pointer" }}
               >
                 Sign Up
               </span>
@@ -165,8 +168,7 @@ function Login() {
               name="name"
               helperText=""
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   signUpHandler();
                 }
               }}
@@ -179,8 +181,7 @@ function Login() {
               color="secondary"
               name="email"
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   signUpHandler();
                 }
               }}
@@ -194,8 +195,7 @@ function Login() {
               color="secondary"
               name="password"
               onKeyDown={(event) => {
-                if (event.code == "Enter") {
-                  // console.log(event);
+                if (event.code === "Enter") {
                   signUpHandler();
                 }
               }}
@@ -204,8 +204,13 @@ function Login() {
               variant="outlined"
               color="secondary"
               onClick={signUpHandler}
+              disabled={loading}
             >
-              Sign Up
+              {loading ? (
+                <CircularProgress size={24} color="secondary" />
+              ) : (
+                "Sign Up"
+              )}
             </Button>
             <p>
               Already have an Account ?
@@ -213,7 +218,8 @@ function Login() {
                 className="hyper"
                 onClick={() => {
                   setShowLogin(true);
-                }} style={{cursor:"pointer"}}
+                }}
+                style={{ cursor: "pointer" }}
               >
                 Log in
               </span>
