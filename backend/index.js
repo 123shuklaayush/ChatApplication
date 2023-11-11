@@ -2,6 +2,9 @@ const express = require("express")
 const dotenv = require("dotenv");
 const { default: mongoose } = require("mongoose");
 const userRoutes = require("./Routes/userRoutes")
+const chatRoutes = require("./Routes/chatRoutes")
+const messageRoutes = require("./Routes/messageRoutes")
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const app = express()
 const cors = require('cors')
 app.use(
@@ -29,6 +32,13 @@ app.get("/", (req,res) => {
 });
 
 app.use("/user", userRoutes)
+app.use("/chat", chatRoutes)
+app.use("/message", messageRoutes);
+
+
+app.use(notFound);
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log("Server is Running"));
